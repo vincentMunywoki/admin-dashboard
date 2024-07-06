@@ -133,7 +133,6 @@ aside{
 }
 
 aside .top{
-    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -466,15 +465,15 @@ main .recent-orders a{
 
 
 /*===========Sales Analytics========*/
-.right .sales-anayltics{
+.right .sales-analytics{
     margin-top: 2rem;
 }
 
-.right .sales-anayltics h2{
+.right .sales-analytics h2{
     margin-bottom: 0.8rem;
 }
 
-.right .sales-anayltics .item {
+.right .sales-analytics .item {
     background: var(--color-white);
     display: flex;
     align-items: center;
@@ -486,6 +485,95 @@ main .recent-orders a{
     transition: all 300ms ease;
 }
 
-.right .sales-anayltics .item:hover{
-    box-shadow: none;
+.right .sales-analytics .item:hover{
+    box-shadow: none; 
+}
+
+.right .sales-analytics .item .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+
+.right .sales-analytics .item .icon{
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+}
+
+.right .sales-analytics .item.offline .icon{
+    background-color: var(--color-danger);
+}
+
+.right .sales-analytics .item.customers .icon{
+    background-color: var(--color-success);
+}
+
+.right .sales-analytics .add-product{
+    background-color: transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .sales-analytics .add-product div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.right .sales-analytics .add-product div h3{
+    font-weight: 600;
+}
+
+
+
+/* media queries */
+
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .logo h2{
+        display: none;
+    }
+
+    aside .sidebar h3{
+        display: none;
+    }
+
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+    
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .insights{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .recent-orders{
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+
+    main .recent-orders table{
+        width: 83vw;
+    }
 }
